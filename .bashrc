@@ -12,8 +12,6 @@ source ~/.local/share/omarchy/default/bash/rc
 
 export PATH=$HOME/.local/bin/:$HOME/.cargo/bin/:$PATH
 
-. "$HOME/.local/share/../bin/env"
-
 # Aliases
 alias icat="kitten icat"
 
