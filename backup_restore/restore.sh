@@ -61,3 +61,5 @@ echo "=== Restore complete! ==="
 
 echo "Reload Hyprland"
 hyprctl reload
+
+change-wallpaper.sh
