@@ -61,3 +61,6 @@ git commit -m "Backup $(date '+%Y-%m-%d %H:%M:%S')" >/dev/null
 
 echo "Backup complete!"
 echo "Stored in git repo: $BACKUP_REPO"
+
+git push -u origin master
+
