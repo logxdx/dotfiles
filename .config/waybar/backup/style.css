@@ -1,0 +1,189 @@
+@import 'colors.css';
+
+* {
+    font-family: "FiraCode Nerd Font Mono";
+    font-size: 14px;
+    min-height: 0;
+    font-weight: bold;
+}
+
+.modules-left {
+}
+
+.modules-center {
+}
+
+.modules-right {
+}
+
+window#waybar {
+    background: rgba(10, 10, 10, 0.7);
+    transition: 0.1s linear;
+    margin: 0;
+    padding: 0;
+    border-radius: 0 0;
+}
+
+#custom-omarchy,
+#custom-logo
+{
+    color: @primary;
+    margin: 0px;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+#taskbar {
+	background: @background;
+	padding: 0px;
+    margin: 4px 3px;
+    border-radius: 5px;
+    border: 0px;
+}
+
+#taskbar.empty {
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+#taskbar button {
+    background: transparent;
+    transition: 0.1s linear;
+    padding: 0 3px 0 5px;
+    margin: 0px;
+    border: 0px;
+    border-radius: 5px;
+}
+
+#taskbar button:hover {
+    background: transparent;
+    color: transparent;
+    transition: 0.1s linear;
+    padding: 0 3px 0 5px;
+    margin: 0px;
+    border: 0px;
+}
+
+#taskbar button.active {
+    background: transparent;
+    color: @primary;
+    border: 1px solid @primary;
+}
+
+#custom-music {
+    background: @background;
+    color: @primary;
+    padding: 0 8px;
+    margin: 4px 3px;
+    border-radius: 5px;
+    border: 1px solid @primary;
+}
+
+#custom-notification,
+#custom-update {
+    color: @primary;
+    padding: 0 8px;
+    margin: 4px 10px;
+}
+
+#workspaces {
+    background: @background;
+    margin: 4px 0px;
+    border-radius: 5px;
+}
+
+#workspaces button {
+    color: @primary;
+    margin: 1px;
+    padding: 0px 3px;
+    border-radius: 4px;
+    transition: 0.1s linear;
+}
+
+#workspaces button.active {
+    color: @background;
+    background: @primary;
+}
+
+#workspaces button:not(.active).empty {
+    color: @inverse_secondary;
+    opacity: 0.4;
+}
+
+#workspaces button.urgent {
+    background-color: @error;
+    color: @surface_container;
+    opacity: 1;
+}
+
+#custom-expand-icon,
+#tray,
+#backlight,
+#pulseaudio,
+#bluetooth,
+#network,
+#battery {
+    background: @background;
+    color: @primary;
+    margin: 4px 3px;
+    padding: 0 8px;
+    border-radius: 5px;
+}
+
+#pulseaudio.muted {
+    margin: 0;
+    padding: 0;
+}
+
+#battery.charging {
+    color: #55FF55;
+}
+
+#battery.warning:not(.charging) {
+    color: #FF5555;
+}
+
+#battery.critical {
+    color: #FF55FF;
+}
+
+#group-power {
+    background: transparent;
+    color: @background;
+    margin: 4px 0px;
+    padding: 0px;
+    border-radius: 5px;
+}
+
+#clock {
+    background: @primary;
+    margin: 0px 3px;
+    padding: 0px 8px;
+    border-radius: 5px;
+}
+
+#cpu,
+#memory,
+#disk,
+#temperature,
+#user 
+{
+    color: @primary;
+    background: @background;
+    margin: 0px 3px;
+    padding: 0px 8px;
+    border-radius: 5px;
+}
+
+#custom-reboot,
+#custom-shutdown,
+#custom-suspend,
+#custom-lock
+{
+    color: @background;
+    background: @primary;
+    margin: 0px 3px;
+    padding: 0px 8px;
+    border-radius: 5px;
+}

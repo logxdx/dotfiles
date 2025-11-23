@@ -1,0 +1,322 @@
+{
+  "layer": "top", "position": "bottom",
+  "modules-left": [
+    "custom/logo",
+    "wlr/taskbar",
+    "custom/music"
+  ],
+  "modules-center": [
+    "hyprland/workspaces",
+    "custom/update"
+  ],
+  "modules-right": [
+    "group/tray-expander", 
+    "backlight", 
+    "pulseaudio", 
+    "bluetooth", 
+    "network", 
+    "battery", 
+    "group/group-power"
+  ],
+  "reload_style_on_change":true,
+
+  "custom/logo": {
+    "format": "<span font='16'></span>",
+    "on-click": "omarchy-menu",
+    "on-click-right": "omarchy-launch-about",
+    "tooltip": false,
+  },
+
+  "custom/omarchy": {
+    "format": "<span font='12'>\ue900</span>",
+    "on-click": "omarchy-menu",
+    "on-click-right": "xdg-terminal-exec",
+    "tooltip-format": "Omarchy Menu\nSuper + Alt + Space",
+  },
+
+  "custom/music": {
+    "format": " {}",
+    "escape": true,
+    "interval": 1,
+    "exec": "playerctl metadata --format='{{ title }} | {{artist}}'",
+    "on-click": "playerctl play-pause",
+    "max-length": 50
+  },
+
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 14,
+    "tooltip": true,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "active-first": false,
+   },
+
+  "hyprland/workspaces": {
+  	"format": "{name}",
+  	"format-icons": {
+  		"1": "1",
+  		"2": "2",
+  		"3": "3",
+  		"4": "4",
+  		"5": "5",
+  		"6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+  		"active": "<span font='12'>󱓻</span>",
+  		"default": ""
+  	},
+    "persistent-workspaces": {
+         "1": [],
+         "2": [],
+         "3": [],
+         "4": [],
+         "5": [],
+    }
+  },
+
+  "custom/update": {
+    "format": "",
+    "exec": "omarchy-update-available",
+    "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
+    "tooltip-format": "Omarchy update available",
+    "signal": 7,
+    "interval": 21600
+  },
+  "idle_inhibitor":{
+    "format": "{icon}",
+    "format-icons": {
+      "activated":"󰈈",
+      "deactivated":"󰈉"
+    },
+    "tooltip": false
+  },
+
+  "custom/weather": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/weather.sh",
+    "interval": 60,
+    "on-click": "firefox https://wttr.in"
+  },
+
+  "bluetooth": {
+    "format-on": "<span font='11'></span>",
+    "format-disabled": "",
+    "format-connected": "<span font='12'></span>",
+    "format-connected-battery": "{device_battery_percentage}<span font='10'> ᚼᛒ</span>",
+    "tooltip-format": "{controller_alias}  {controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}  {controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}  {device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}  {device_address}  {device_battery_percentage}%",
+    "on-click": "blueberry",
+  }, 
+
+  "network": {
+        "format-wifi": "<span font='12'>ᯤ</span>",
+        "format-ethernet": "<span font='16'>󰀂</span>",
+        "format-disconnected": "<span font='12'>ᯤ̷</span>",
+        "tooltip-format": "{ipaddr}",
+        "tooltip-format-wifi": "{essid} ({frequency} GHz) ({signalStrength}%)\n⇣ {bandwidthDownBytes} | ⇡ {bandwidthUpBytes}\n{ipaddr}",
+        "tooltip-format-ethernet": "{ifname} 🖧 \n⇣ {bandwidthDownBytes} | ⇡ {bandwidthUpBytes} \n{ipaddr}",
+        "on-click": "omarchy-launch-wifi"
+  },
+
+  "battery": {
+    "interval": 10,
+    "states": {
+      "good": 95,
+      "warning": 25,
+      "critical": 15
+    },
+    "format": "{capacity}",
+    "format-charging": "{capacity}<span font='8'> ⚡︎</span>",
+    "format-plugged": "{capacity} ",
+    "format-icons": [
+      "󰁻",
+      "󰁼",
+      "󰁾",
+      "󰂀",
+      "󰂂",
+      "󰁹"
+    ],
+    "tooltip-format": "Status:\t\t{timeTo}\nCapacity:\t{capacity}%\nDrawing:\t{power} W\nCycles: \t{cycles}\nHealth: \t{health}%",
+    "on-click": "omarchy-menu power",
+  },
+
+  "pulseaudio": {
+    "format": "<span font='14'>{icon}</span>",
+    "format-bluetooth":"<span font='10'></span>",
+    "format-muted": "<span font='14'></span>",
+    "format-icons": {
+      "headphones": "",
+      "bluetooth": "󰥰",
+      "handsfree": "",
+      "headset": "󱡬",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "xdg-terminal-exec --app-id=com.omarchy.Wiremix -e wiremix",
+    "on-click-right": "pamixer -t",
+    "smooth-scrolling-threshold": 1,
+    "tooltip-format": "{desc}\t{volume}%"
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "<span font='12'>{icon}</span>",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+    ],
+    "on-scroll-down": "brightnessctl s +1%",
+    "on-scroll-up": "brightnessctl s 1%-",
+    "smooth-scrolling-threshold": 1,
+    "tooltip-format": "Brightness: {percent}%"
+    },
+
+  "disk": {
+    "interval": 1,
+    "format": "{used} ",
+    "tooltip-format": "{percentage_used}% of {total}",
+    "path": "/"
+  },
+
+  "cpu": {
+    "interval": 1,
+    "format": "{usage}% ",
+  "on-click": "btop",
+  },
+
+  "memory": {
+    "interval": 1,
+    "format": "{used}GiB ",
+    "tooltip-format": "{percentage}% of {total}GiB",
+  },
+
+  "hyprland/window": {
+    "format": "{class}",
+    "rewrite": {
+         "(.*) - Mozilla Firefox": "🌎 $1",
+    }
+  },
+
+  "temperature": {
+    "format": " {temperatureC}°C",            
+    "format-critical": " {temperatureC}°C",
+    "interval": 1,
+    "critical-threshold": 80,
+    "on-click": "btop",
+  },
+
+  "jack": {
+      "format": "{} 󱎔",
+      "format-xrun": "{xruns} xruns",
+      "format-disconnected": "DSP off",
+      "realtime": true
+  },
+
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "tray-group-item"
+    },
+    "modules": [
+      "custom/expand-icon", 
+      "tray"
+    ]
+  },
+
+  "custom/expand-icon": {
+    "format": "<span font='14'></span>",
+    "tooltip": false
+  },
+
+  "tray": {
+      "icon-size": 16,
+      "spacing": 10
+  },
+
+  "upower": {
+      "show-icon": false,
+      "hide-if-empty": true,
+      "tooltip": true,
+      "tooltip-spacing": 20
+  },
+
+  "custom/powerDraw": {
+    "format": "{}",
+    "interval": 1,
+    "exec": "~/.config/waybar/scripts/powerdraw.sh",
+    "return-type": "json"
+  },
+
+  "group/group-power": {
+    "orientation": "horizontal",
+    "drawer": {
+        "transition-duration": 300,
+        "children-class": "not-power",
+        "transition-left-to-right": true
+    },
+    "modules": [
+        "clock",
+        // "cpu",
+        // "memory",
+        // "disk",
+        // "temperature",
+        "custom/reboot",
+        "custom/shutdown",
+        "custom/suspend",
+        "custom/lock",
+        "user"
+      ]
+  },
+
+  "clock": {
+    "format": "{:%a, %d %b %H:%M}",
+    "interval": 60,
+    "tooltip": false,
+    // "on-click": "firefox https://calendar.google.com/u/0/r/month"
+  },  
+  "custom/lock": {
+    "tooltip-format": "Lock",
+    "on-click": "omarchy-lock-screen",
+    "format": "<span font='14'></span>"
+  },
+  "custom/suspend": {
+    "tooltip-format": "Suspend",
+    "on-click": "systemctl suspend",
+    "format": "<span font='14'>󰤄</span>"    
+  },
+  "custom/reboot": {
+        "format": "<span font='14'>󰜉</span>",
+        "tooltip-format": "Reboot",
+        "on-click": "omarchy-state clear re*-required && systemctl reboot --no-wall"
+  },
+  "custom/shutdown": {
+        "format": "<span font='14'>⏻</span>",
+        "tooltip-format": "Shutdown",
+        "on-click": "omarchy-state clear re*-required && systemctl poweroff --no-wall"
+  },
+  "user": {
+          "format": "{user}",
+          "interval": 600,
+          "height": 30,
+          "width": 30,
+          "icon": true,
+  }
+}
+

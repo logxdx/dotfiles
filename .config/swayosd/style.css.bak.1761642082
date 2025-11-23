@@ -1,0 +1,26 @@
+@import "colors.css";
+
+window {
+  border-radius: 10px;
+  opacity: 0.97;
+  border: 2px solid @primary;
+  background-color: @background;
+}
+
+label {
+  font-family: 'FiraCode Nerd Font Mono';
+  font-size: 11pt;
+  color: @primary;
+}
+
+image {
+  color: @image;
+}
+
+progressbar {
+  border-radius: 0;
+}
+
+progress {
+  background-color: @primary;
+}

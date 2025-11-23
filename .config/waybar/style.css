@@ -1,0 +1,193 @@
+@import 'colors.css';
+
+* {
+    font-family: "FiraCode Nerd Font Mono";
+    font-size: 14px;
+    font-weight: bold;
+    min-width: 24px;
+}
+
+.modules-left {
+}
+
+.modules-center {
+}
+
+.modules-right {
+}
+
+window#waybar {
+    background: alpha(@primary, 0.6);
+    transition: 0.1s linear;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 0 0;
+}
+
+#custom-omarchy,
+#custom-logo
+{
+    background: @background;
+    color: @primary;
+    margin: 10px 5px;
+    padding: 0px 0px;
+    border-radius: 5px;
+}
+
+#taskbar {
+	background: @background;
+	padding: 0px 0px;
+    margin: 0px 5px;
+    border-radius: 5px;
+    border: 0px;
+}
+
+#taskbar.empty {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+#taskbar button, button:hover {
+    background: transparent;
+    color: @primary;
+    padding: 5px 0px 0px 0px;
+    margin: 5px 5px;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    transition: 0.1s linear;
+}
+
+#taskbar button.active {
+    background: transparent;
+    color: @primary;
+    border-bottom: 2px solid @primary;
+}
+
+#custom-music {
+    background: @background;
+    color: @primary;
+    padding: 0 0px;
+    margin: 0px 0px;
+    border-radius: 5px;
+    border: 1px solid @primary;
+}
+
+#custom-notification,
+#custom-update {
+    color: @primary;
+    padding: 0 0px;
+    margin: 10px 5px;
+}
+
+#workspaces {
+    background: @background;
+    margin: 0px 5px;
+    border-radius: 5px;
+}
+
+#workspaces button, button:hover {
+    color: @primary;
+    background: @background;
+    padding: 0px 0px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    transition: 0.2s ease-in-out;
+}
+
+#workspaces button.active {
+    color: @background;
+    background: @primary;
+}
+
+#workspaces button:not(.active).empty {
+    color: @inverse_secondary;
+    opacity: 0.5;
+}
+
+#workspaces button.urgent {
+    background-color: @error;
+    color: @surface_container;
+    opacity: 1;
+}
+
+#custom-expand-icon,
+#tray,
+#custom-weather,
+#idle_inhibitor,
+#backlight,
+#pulseaudio,
+#bluetooth,
+#network,
+#battery {
+    background: @background;
+    color: @primary;
+    margin: 2px 5px;
+    padding: 5px 0px;
+    border-radius: 5px;
+}
+
+#pulseaudio.muted {
+    margin: 0;
+    padding: 0;
+}
+
+#battery.charging,
+#battery.plugged
+{
+    color: #55FF55;
+}
+
+#battery.warning:not(.charging) {
+    color: #FF5555;
+}
+
+#battery.critical {
+    color: #FF55FF;
+}
+
+#group-power {
+    background: transparent;
+    color: @primary;
+    margin: 0px 5px;
+    padding: 0px;
+    border-radius: 5px;
+}
+
+#clock {
+    background: @background;
+    margin: 2px 0px;
+    padding: 5px 0px;
+    border-radius: 5px;
+}
+
+#cpu,
+#memory,
+#disk,
+#temperature,
+#user 
+{
+    color: @primary;
+    background: @background;
+    margin: 5px 0px;
+    padding: 0px 0px;
+    border-radius: 5px;
+}
+
+#custom-reboot,
+#custom-shutdown,
+#custom-suspend,
+#custom-lock
+{
+    background: @background;
+    color: @primary;
+    margin: 2px 0px;
+    padding: 5px 0px;
+    border-radius: 5px;
+}

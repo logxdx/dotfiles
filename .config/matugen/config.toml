@@ -1,0 +1,77 @@
+[config.wallpaper]
+command = "swww"
+arguments = ["img", "--transition-type", "wipe", "--transition-angle", "45", "--transition-duration", "3", "--transition-fps", "60", "--transition-step", "15", "--resize", "crop"]
+set = true
+
+[templates.waybar]
+input_path = './templates/waybar-colors.css'
+output_path = '~/.config/waybar/colors.css'
+post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.hyprland]
+input_path = './templates/hyprland-colors.conf'
+output_path = '~/.config/hypr/colors.conf'
+post_hook = 'hyprctl reload'
+
+[templates.kitty]
+input_path = './templates/kitty-colors.conf'
+output_path = '~/.config/kitty/colors.conf'
+post_hook = 'pkill -SIGUSR2 kitty'
+
+[templates.alacritty]
+input_path = './templates/alacritty-colors.toml'
+output_path = '~/.config/alacritty/colors.toml'
+
+[templates.starship]
+input_path = './templates/starship-colors.toml'
+output_path = '~/.config/starship.toml'
+
+[templates.btop]
+input_path = './templates/btop-colors.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+
+[templates.gtk3]
+input_path = './templates/matugen-gtk.css'
+output_path = '~/.config/gtk-3.0/colors.css'
+
+[templates.gtk4]
+input_path = './templates/matugen-gtk.css'
+output_path = '~/.config/gtk-4.0/colors.css'
+# post_hook = 'killall -9 nautilus'
+
+[templates.walker]
+input_path = "./templates/waybar-colors.css"
+output_path = "~/.config/walker/themes/logx/colors.css"
+
+[templates.swayosd]
+input_path = "./templates/waybar-colors.css"
+output_path = "~/.config/swayosd/colors.css"
+post_hook = "omarchy-restart-swayosd"
+
+[templates.rofi]
+input_path = './templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors.rasi'
+
+[templates.yazi]
+input_path = './templates/yazi-theme.toml'
+output_path = '~/.config/yazi/theme.toml'
+
+[templates.pywalfox]
+input_path = './templates/pywalfox-colors.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
+
+[templates.mako]
+input_path = './templates/mako-colors.ini'
+output_path = '~/.config/mako/config'
+post_hook = 'makoctl reload'
+
+[templates.sublime]
+input_path = './templates/Marina.sublime-color-scheme'
+output_path = '~/.config/sublime-text/Packages/User/Mariana.sublime-color-scheme'
+
+[templates.chromium]
+input_path = "./templates/chromium-colors.theme"
+output_path = '~/.config/matugen/themes/chromium.theme'
+post_hook = 'brave --refresh-platform-policy --no-startup-window'
+
