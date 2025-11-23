@@ -1,7 +1,7 @@
 @import 'colors.css';
 
 * {
-    font-family: 'FiraCode Nerd Font Mono';
+    font-family: "FiraCode Nerd Font Mono";
     font-size: 14px;
     font-weight: bold;
     min-width: 24px;
@@ -78,7 +78,7 @@ window#waybar {
 
 #custom-notification,
 #custom-update {
-    color: @primary;
+    color: @background;
     padding: 0 0px;
     margin: 10px 5px;
 }

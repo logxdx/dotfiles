@@ -6,15 +6,15 @@ palette = 'colors'
 
 [palettes.colors]
 mustard = '#af8700' # example
-color1 = '#ffb4a2'
-color2 = '#561f11'
-color3 = '#d8c2bd'
-color4 = '#271d1b'
-color5 = '#561f11'
-color6 = '#1a110f'
-color7 = '#1a110f'
-color8 = '#ffb4a2'
-color9 = '#dac58d'
+color1 = '#f3b2e3'
+color2 = '#4d1f46'
+color3 = '#d2c2cb'
+color4 = '#241e22'
+color5 = '#4d1f46'
+color6 = '#181216'
+color7 = '#181216'
+color8 = '#f3b2e3'
+color9 = '#f5b9a4'
 
 # Prompt symbols 
 [character]

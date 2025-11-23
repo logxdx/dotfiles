@@ -3,14 +3,11 @@ btop
 fastfetch
 fontconfig
 git
-gtk-3.0
-gtk-4.0
 hypr
 mako
 matugen
 swaync
 swayosd
-systemd
 walker
 waybar
 yazi
