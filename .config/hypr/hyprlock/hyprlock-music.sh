@@ -357,7 +357,7 @@ get_player_display() {
 case "${1:-}" in
 --title)
   title="$(get_metadata 'xesam:title')"
-  printf '%s\n' "$(trim_string "${title:-Nothing Playing}" 29)"
+  printf '%s\n' "$(trim_string "${title:-}" 29)"
   ;;
 
 --artist)
