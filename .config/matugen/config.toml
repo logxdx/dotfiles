@@ -1,6 +1,6 @@
 [config.wallpaper]
 command = "swww"
-arguments = ["img", "--transition-type", "wipe", "--transition-angle", "45", "--transition-duration", "3", "--transition-fps", "60", "--transition-step", "15", "--resize", "crop"]
+arguments = ["img", "--transition-type", "wipe", "--transition-angle", "45", "--transition-duration", "1.5", "--transition-fps", "60", "--transition-step", "150", "--resize", "crop"]
 set = true
 
 [templates.waybar]
@@ -37,7 +37,7 @@ output_path = '~/.config/gtk-3.0/colors.css'
 [templates.gtk4]
 input_path = './templates/matugen-gtk.css'
 output_path = '~/.config/gtk-4.0/colors.css'
-# post_hook = 'killall -9 nautilus'
+post_hook = 'killall -9 nautilus'
 
 [templates.walker]
 input_path = "./templates/waybar-colors.css"
@@ -48,9 +48,9 @@ input_path = "./templates/waybar-colors.css"
 output_path = "~/.config/swayosd/colors.css"
 post_hook = "omarchy-restart-swayosd"
 
-[templates.rofi]
-input_path = './templates/rofi-colors.rasi'
-output_path = '~/.config/rofi/colors.rasi'
+# [templates.rofi]
+# input_path = './templates/rofi-colors.rasi'
+# output_path = '~/.config/rofi/colors.rasi'
 
 [templates.yazi]
 input_path = './templates/yazi-theme.toml'
@@ -70,8 +70,8 @@ post_hook = 'makoctl reload'
 input_path = './templates/Marina.sublime-color-scheme'
 output_path = '~/.config/sublime-text/Packages/User/Mariana.sublime-color-scheme'
 
-[templates.chromium]
-input_path = "./templates/chromium-colors.theme"
-output_path = '~/.config/matugen/themes/chromium.theme'
-post_hook = 'brave --refresh-platform-policy --no-startup-window'
+# [templates.chromium]
+# input_path = "./templates/chromium-colors.theme"
+# output_path = '~/.config/matugen/themes/chromium.theme'
+# post_hook = 'brave --refresh-platform-policy --no-startup-window'
 
