@@ -29,7 +29,7 @@ window#waybar {
 {
     background: @background;
     color: @primary;
-    margin: 10px 5px;
+    margin: 5px 5px;
     padding: 0px 0px;
     border-radius: 5px;
 }
@@ -37,9 +37,9 @@ window#waybar {
 #taskbar {
 	background: @background;
 	padding: 0px 0px;
-    margin: 0px 5px;
-    border-radius: 5px;
-    border: 0px;
+  margin: 5px 5px;
+  border-radius: 5px;
+  border: 0px;
 }
 
 #taskbar.empty {
@@ -85,7 +85,7 @@ window#waybar {
 
 #workspaces {
     background: @background;
-    margin: 0px 5px;
+    margin: 5px 5px;
     border-radius: 5px;
 }
 
