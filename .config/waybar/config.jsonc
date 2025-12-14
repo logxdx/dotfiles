@@ -300,7 +300,7 @@
   },
 
   "clock": {
-    "format": "{:%H\n%M}",
+    "format": "{:%H\n%M\n~~\n%d\n%m}",
     "interval": 60,
     "tooltip": true,
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
