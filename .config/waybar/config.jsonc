@@ -156,6 +156,7 @@
       "phone": "",
       "portable": "",
       "car": "",
+      "headphone": "",
       "default": ["", "", ""]
     },
     "on-click": "xdg-terminal-exec --app-id=com.omarchy.Wiremix -e wiremix",
@@ -259,6 +260,19 @@
     "tooltip": false
   },
 
+  "custom/voxtype": {
+    "exec": "omarchy-voxtype-status",
+    "return-type": "json",
+    "format": "{icon}",
+    "format-icons": {
+      "idle": "",
+      "recording": "󰍬",
+      "transcribing": "󰔟"
+    },
+    "tooltip": true,
+    "on-click-right": "omarchy-voxtype-config",
+    "on-click": "omarchy-voxtype-model"
+  },
   "tray": {
       "icon-size": 16,
       "spacing": 10

@@ -153,3 +153,7 @@ clipboard = [
   { action = "edit", bind = "ctrl o" },
 ]
 
+
+[[emergencies]]
+text = "Restart Walker"
+command = "omarchy-restart-walker"
