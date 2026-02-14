@@ -41,6 +41,6 @@ else
   # Set new background symlink
   ln -nsf "$NEW_BACKGROUND" "$CURRENT_BACKGROUND_LINK"
 
-  matugen image $NEW_BACKGROUND
+  matugen image $NEW_BACKGROUND --source-color-index 0
 
 fi

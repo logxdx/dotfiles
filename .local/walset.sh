@@ -19,7 +19,7 @@ done | walker --dmenu)
 
 if [ -n "$SELECTED_WALL" ]; then
     ln -nsf "$SELECTED_WALL" "$CURRENT_BACKGROUND_LINK"
-    matugen image "$SELECTED_WALL"
+    matugen image "$SELECTED_WALL" --source-color-index 0
 fi
 
 # Go back to where you came from
