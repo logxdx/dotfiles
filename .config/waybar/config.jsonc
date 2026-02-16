@@ -16,13 +16,10 @@
   ],
   "modules-right": [
     "group/tray-expander", 
-    // "idle_inhibitor",
-    // "backlight", 
-    // "pulseaudio", 
-    // "bluetooth", 
-    // "network", 
-    "battery", 
-    "group/group-power"
+    "bluetooth", 
+    "network", 
+    "battery",
+    "clock"
   ],
   "reload_style_on_change":true,
 
@@ -78,8 +75,8 @@
          "1": [],
          "2": [],
          "3": [],
-         // "4": [],
-         // "5": [],
+         "4": [],
+         "5": [],
     }
   },
 
@@ -89,7 +86,7 @@
     "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
     "tooltip-format": "Omarchy update available",
     "signal": 7,
-    "interval": 21600
+    "interval": 3600
   },
   "idle_inhibitor":{
     "format": "{icon}",
@@ -103,6 +100,7 @@
   "bluetooth": {
     "format-on": "<span font='14'></span>",
     "format-disabled": "",
+    "format-no-controller": "",
     "format-connected": "<span font='14'></span>",
     "format-connected-battery": "{device_battery_percentage}",
     "tooltip-format": "{controller_alias}  {controller_address}\n\n{num_connections} connected",
@@ -246,9 +244,9 @@
       "tray",
       "idle_inhibitor",
       "backlight", 
-      "pulseaudio", 
-      "bluetooth", 
-      "network", 
+      "pulseaudio" 
+      // "bluetooth", 
+      // "network", 
     ]
   },
 

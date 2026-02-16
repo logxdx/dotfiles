@@ -2,9 +2,9 @@
 
 * {
     font-family: 'FiraCode Nerd Font Mono';
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
-    min-width: 20px;
+    min-width: 10px;
 }
 
 .modules-left {
@@ -17,7 +17,7 @@
 }
 
 window#waybar {
-    background: alpha(@primary, 0.6);
+    background: alpha(@primary, 0.0);
     transition: 0.1s linear;
     margin: 0px;
     padding: 0px;
@@ -37,9 +37,9 @@ window#waybar {
 #taskbar {
 	background: @background;
 	padding: 0px 0px;
-  margin: 5px 5px;
-  border-radius: 5px;
-  border: 0px;
+    margin: 5px 5px;
+    border-radius: 5px;
+    border: 0px;
 }
 
 #taskbar.empty {
@@ -64,7 +64,7 @@ window#waybar {
 #taskbar button.active {
     background: transparent;
     color: @primary;
-    border-bottom: 2px solid @primary;
+    border-right: 1px solid @primary;
 }
 
 #custom-music {
@@ -92,7 +92,7 @@ window#waybar {
 #workspaces button, button:hover {
     color: @primary;
     background: @background;
-    padding: 0px 0px;
+    padding: 0px 5px;
     margin: 5px;
     border-radius: 5px;
     border: none;
@@ -162,8 +162,8 @@ window#waybar {
 
 #clock {
     background: @background;
-    margin: 2px 0px;
-    padding: 5px 0px;
+    margin: 2px 5px 5px;
+    padding: 5px 5px;
     border-radius: 5px;
 }
 
