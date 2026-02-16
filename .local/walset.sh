@@ -25,4 +25,4 @@
 # # Go back to where you came from
 # cd "$CWD" || exit
 
-omarchy-launch-walker -m menus:wallpapers --width 800 --minheight 400
+omarchy-launch-walker -m menus:wallpapers --width 1200 --minheight 400
