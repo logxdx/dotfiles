@@ -16,4 +16,4 @@ export PATH=$HOME/.local/bin/:$HOME/.cargo/bin/:$PATH
 
 # Aliases
 alias icat="kitten icat"
-
+alias vcat="mpv --no-config --vo=tct --profile=sw-fast --really-quiet --ao='pulse'"

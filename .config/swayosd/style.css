@@ -8,7 +8,7 @@ window {
 }
 
 label {
-  font-family: 'FiraCode Nerd Font Mono';
+  font-family: 'JetBrainsMono Nerd Font Mono';
   font-size: 11pt;
   color: @primary;
 }
