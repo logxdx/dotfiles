@@ -16,7 +16,8 @@ post_hook = 'hyprctl reload'
 [templates.kitty]
 input_path = './templates/kitty-colors.conf'
 output_path = '~/.config/kitty/colors.conf'
-post_hook = 'pkill -SIGUSR2 kitty'
+post_hook = 'pkill -SIGUSR1 kitty'
+
 
 [templates.alacritty]
 input_path = './templates/alacritty-colors.toml'
@@ -37,7 +38,7 @@ output_path = '~/.config/gtk-3.0/colors.css'
 [templates.gtk4]
 input_path = './templates/matugen-gtk.css'
 output_path = '~/.config/gtk-4.0/colors.css'
-post_hook = 'killall -9 nautilus'
+post_hook = 'pkill -SIGUSR2 nautilus'
 
 [templates.walker]
 input_path = "./templates/waybar-colors.css"
@@ -47,6 +48,12 @@ output_path = "~/.config/walker/themes/logx/colors.css"
 input_path = "./templates/waybar-colors.css"
 output_path = "~/.config/swayosd/colors.css"
 post_hook = "omarchy-restart-swayosd"
+
+# Swaync
+[templates.swaync]
+input_path = './templates/swaync-colors.css'
+output_path = '~/.config/swaync/matugen/matugen-swaync.css'
+post_hook = 'swaync-client -rs'
 
 # [templates.rofi]
 # input_path = './templates/rofi-colors.rasi'
