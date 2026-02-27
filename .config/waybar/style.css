@@ -162,6 +162,7 @@ window#waybar {
 
 #clock {
     background: @background;
+    color: @primary;
     margin: 2px 5px 5px;
     padding: 5px 5px;
     border-radius: 5px;
@@ -198,5 +199,10 @@ window#waybar {
 }
 
 #custom-voxtype.recording {
+  color: #a55555;
+}
+
+#custom-idle-indicator.active,
+#custom-notification-silencing-indicator.active {
   color: #a55555;
 }
