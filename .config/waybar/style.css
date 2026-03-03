@@ -64,7 +64,7 @@ window#waybar {
 #taskbar button.active {
     background: transparent;
     color: @primary;
-    border-right: 1px solid @primary;
+    border-bottom: 1px solid @primary;
 }
 
 #custom-music {
