@@ -49,12 +49,11 @@ input_path = "./templates/waybar-colors.css"
 output_path = "~/.config/swayosd/colors.css"
 post_hook = "omarchy-restart-swayosd"
 
-# Swaync
-[templates.swaync]
-input_path = './templates/swaync-colors.css'
-output_path = '~/.config/swaync/matugen/matugen-swaync.css'
-post_hook = 'swaync-client -rs'
-
+# [templates.swaync]
+# input_path = './templates/swaync-colors.css'
+# output_path = '~/.config/swaync/matugen/matugen-swaync.css'
+# post_hook = 'swaync-client -rs'
+#
 # [templates.rofi]
 # input_path = './templates/rofi-colors.rasi'
 # output_path = '~/.config/rofi/colors.rasi'

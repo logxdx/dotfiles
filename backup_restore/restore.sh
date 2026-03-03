@@ -62,4 +62,5 @@ echo "=== Restore complete! ==="
 echo "Reload Hyprland"
 hyprctl reload
 
-change-wallpaper.sh
+CURRENT_BACKGROUND=$(readlink "$HOME/.config/omarchy/current/background")
+matugen image $CURRENT_BACKGROUND --source-color-index 0
