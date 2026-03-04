@@ -1,10 +1,10 @@
 @import 'colors.css';
 
 * {
-    font-family: "FiraCode Nerd Font Mono";
+    font-family: 'JetBrainsMono Nerd Font Mono';
     font-size: 14px;
-    min-height: 0;
     font-weight: bold;
+    min-width: 10px;
 }
 
 .modules-left {
@@ -17,65 +17,61 @@
 }
 
 window#waybar {
-    background: rgba(10, 10, 10, 0.7);
+    background: alpha(@primary, 0.0);
     transition: 0.1s linear;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     border-radius: 0 0;
 }
 
 #custom-omarchy,
 #custom-logo
 {
+    background: @background;
     color: @primary;
-    margin: 0px;
-    padding: 0 10px;
+    margin: 5px 5px;
+    padding: 0px 0px;
     border-radius: 5px;
 }
 
 #taskbar {
 	background: @background;
-	padding: 0px;
-    margin: 4px 3px;
+	padding: 0px 0px;
+    margin: 5px 5px;
     border-radius: 5px;
     border: 0px;
 }
 
 #taskbar.empty {
+    background: transparent;
     border: 0;
     padding: 0;
     border-radius: 0;
 }
 
-#taskbar button {
+#taskbar button, button:hover {
     background: transparent;
+    color: @primary;
+    padding: 5px 0px 0px 0px;
+    margin: 5px 5px;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
     transition: 0.1s linear;
-    padding: 0 3px 0 5px;
-    margin: 0px;
-    border: 0px;
-    border-radius: 5px;
-}
-
-#taskbar button:hover {
-    background: transparent;
-    color: transparent;
-    transition: 0.1s linear;
-    padding: 0 3px 0 5px;
-    margin: 0px;
-    border: 0px;
 }
 
 #taskbar button.active {
     background: transparent;
     color: @primary;
-    border: 1px solid @primary;
+    border-bottom: 1px solid @primary;
 }
 
 #custom-music {
     background: @background;
     color: @primary;
-    padding: 0 8px;
-    margin: 4px 3px;
+    padding: 0 0px;
+    margin: 0px 0px;
     border-radius: 5px;
     border: 1px solid @primary;
 }
@@ -83,22 +79,26 @@ window#waybar {
 #custom-notification,
 #custom-update {
     color: @primary;
-    padding: 0 8px;
-    margin: 4px 10px;
+    padding: 0 0px;
+    margin: 10px 5px;
 }
 
 #workspaces {
     background: @background;
-    margin: 4px 0px;
+    margin: 5px;
     border-radius: 5px;
 }
 
-#workspaces button {
+#workspaces button, button:hover {
     color: @primary;
-    margin: 1px;
-    padding: 0px 3px;
-    border-radius: 4px;
-    transition: 0.1s linear;
+    background: @background;
+    padding: 0px;
+    margin: 3px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    transition: 0.2s ease-in-out;
 }
 
 #workspaces button.active {
@@ -108,7 +108,7 @@ window#waybar {
 
 #workspaces button:not(.active).empty {
     color: @inverse_secondary;
-    opacity: 0.4;
+    opacity: 0.5;
 }
 
 #workspaces button.urgent {
@@ -119,6 +119,8 @@ window#waybar {
 
 #custom-expand-icon,
 #tray,
+#custom-weather,
+#idle_inhibitor,
 #backlight,
 #pulseaudio,
 #bluetooth,
@@ -126,8 +128,8 @@ window#waybar {
 #battery {
     background: @background;
     color: @primary;
-    margin: 4px 3px;
-    padding: 0 8px;
+    margin: 2px 5px;
+    padding: 5px 0px;
     border-radius: 5px;
 }
 
@@ -136,7 +138,9 @@ window#waybar {
     padding: 0;
 }
 
-#battery.charging {
+#battery.charging,
+#battery.plugged
+{
     color: #55FF55;
 }
 
@@ -150,16 +154,17 @@ window#waybar {
 
 #group-power {
     background: transparent;
-    color: @background;
-    margin: 4px 0px;
+    color: @primary;
+    margin: 0px 5px;
     padding: 0px;
     border-radius: 5px;
 }
 
 #clock {
-    background: @primary;
-    margin: 0px 3px;
-    padding: 0px 8px;
+    background: @background;
+    color: @primary;
+    margin: 2px 5px 5px;
+    padding: 5px 5px;
     border-radius: 5px;
 }
 
@@ -171,8 +176,8 @@ window#waybar {
 {
     color: @primary;
     background: @background;
-    margin: 0px 3px;
-    padding: 0px 8px;
+    margin: 5px 0px;
+    padding: 0px 0px;
     border-radius: 5px;
 }
 
@@ -181,9 +186,23 @@ window#waybar {
 #custom-suspend,
 #custom-lock
 {
-    color: @background;
-    background: @primary;
-    margin: 0px 3px;
-    padding: 0px 8px;
+    background: @background;
+    color: @primary;
+    margin: 2px 0px;
+    padding: 5px 0px;
     border-radius: 5px;
+}
+
+#custom-voxtype {
+  min-width: 12px;
+  margin: 0 0 0 7.5px;
+}
+
+#custom-voxtype.recording {
+  color: #a55555;
+}
+
+#custom-idle-indicator.active,
+#custom-notification-silencing-indicator.active {
+  color: #a55555;
 }

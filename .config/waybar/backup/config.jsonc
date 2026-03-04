@@ -1,22 +1,26 @@
 {
-  "layer": "top", "position": "bottom",
+  "layer": "top", 
+  "position": "right",
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "spacing": 0,
   "modules-left": [
     "custom/logo",
-    "wlr/taskbar",
-    "custom/music"
+    "wlr/taskbar"
   ],
   "modules-center": [
     "hyprland/workspaces",
     "custom/update"
+    //"custom/swaync"
   ],
   "modules-right": [
     "group/tray-expander", 
-    "backlight", 
-    "pulseaudio", 
     "bluetooth", 
     "network", 
-    "battery", 
-    "group/group-power"
+    "battery",
+    "clock"
   ],
   "reload_style_on_change":true,
 
@@ -45,7 +49,7 @@
 
   "wlr/taskbar": {
     "format": "{icon}",
-    "icon-size": 14,
+    "icon-size": 16,
     "tooltip": true,
     "tooltip-format": "{title}",
     "on-click": "activate",
@@ -70,11 +74,7 @@
   	},
     "persistent-workspaces": {
          "1": [],
-         "2": [],
-         "3": [],
-         "4": [],
-         "5": [],
-    }
+   }
   },
 
   "custom/update": {
@@ -83,7 +83,7 @@
     "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
     "tooltip-format": "Omarchy update available",
     "signal": 7,
-    "interval": 21600
+    "interval": 3600
   },
   "idle_inhibitor":{
     "format": "{icon}",
@@ -94,30 +94,46 @@
     "tooltip": false
   },
 
-  "custom/weather": {
-    "format": "{}",
-    "return-type": "json",
-    "exec": "~/.config/waybar/scripts/weather.sh",
-    "interval": 60,
-    "on-click": "firefox https://wttr.in"
-  },
+	"custom/swaync": {
+		"tooltip": true,
+		"tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
+		"format": "{} {icon} ",
+		"format-icons": {
+			"notification": "<span foreground='red'><sup></sup></span>",
+			"none": "",
+			"dnd-notification": "<span foreground='red'><sup></sup></span>",
+			"dnd-none": "",
+			"inhibited-notification": "<span foreground='red'><sup></sup></span>",
+			"inhibited-none": "",
+			"dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+			"dnd-inhibited-none": ""
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "sleep 0.1 && swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+	},
 
   "bluetooth": {
-    "format-on": "<span font='11'></span>",
+    "format-on": "<span font='14'></span>",
+    "format-off": "",
     "format-disabled": "",
-    "format-connected": "<span font='12'></span>",
-    "format-connected-battery": "{device_battery_percentage}<span font='10'> ᚼᛒ</span>",
+    "format-no-controller": "",
+    "format-connected": "<span font='14'></span>",
+    "format-connected-battery": "{device_battery_percentage}",
     "tooltip-format": "{controller_alias}  {controller_address}\n\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}  {controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}  {device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}  {device_address}  {device_battery_percentage}%",
-    "on-click": "blueberry",
+    "on-click": "omarchy-launch-or-focus-tui bluetui",
   }, 
 
   "network": {
-        "format-wifi": "<span font='12'>ᯤ</span>",
+        "format-wifi": "<span font='14'>ᯤ</span>",
         "format-ethernet": "<span font='16'>󰀂</span>",
-        "format-disconnected": "<span font='12'>ᯤ̷</span>",
+        "format-disconnected": "<span font='14'>ᯤ̷</span>",
         "tooltip-format": "{ipaddr}",
         "tooltip-format-wifi": "{essid} ({frequency} GHz) ({signalStrength}%)\n⇣ {bandwidthDownBytes} | ⇡ {bandwidthUpBytes}\n{ipaddr}",
         "tooltip-format-ethernet": "{ifname} 🖧 \n⇣ {bandwidthDownBytes} | ⇡ {bandwidthUpBytes} \n{ipaddr}",
@@ -125,15 +141,15 @@
   },
 
   "battery": {
-    "interval": 10,
+    "interval": 5,
     "states": {
       "good": 95,
       "warning": 25,
       "critical": 15
     },
     "format": "{capacity}",
-    "format-charging": "{capacity}<span font='8'> ⚡︎</span>",
-    "format-plugged": "{capacity} ",
+    // "format-charging": "{capacity}<span font='8'> ⚡︎</span>",
+    // "format-plugged": "{capacity} ",
     "format-icons": [
       "󰁻",
       "󰁼",
@@ -148,8 +164,8 @@
 
   "pulseaudio": {
     "format": "<span font='14'>{icon}</span>",
-    "format-bluetooth":"<span font='10'></span>",
-    "format-muted": "<span font='14'></span>",
+    "format-bluetooth":"<span font='14'></span>",
+    "format-muted": "",
     "format-icons": {
       "headphones": "",
       "bluetooth": "󰥰",
@@ -158,6 +174,8 @@
       "phone": "",
       "portable": "",
       "car": "",
+      "headphone": "",
+      "headset": "",
       "default": ["", "", ""]
     },
     "on-click": "xdg-terminal-exec --app-id=com.omarchy.Wiremix -e wiremix",
@@ -185,7 +203,15 @@
     "on-scroll-up": "brightnessctl s 1%-",
     "smooth-scrolling-threshold": 1,
     "tooltip-format": "Brightness: {percent}%"
-    },
+  },
+
+  "idle_inhibitor": {
+      "format": "<span font='16'>{icon}</span>",
+      "format-icons": {
+          "activated": "",
+          "deactivated": ""
+      }
+  },
 
   "disk": {
     "interval": 1,
@@ -236,15 +262,48 @@
     },
     "modules": [
       "custom/expand-icon", 
-      "tray"
+      "tray",
+      "idle_inhibitor",
+      "backlight", 
+      "pulseaudio" 
+      // "bluetooth", 
+      // "network", 
     ]
   },
 
   "custom/expand-icon": {
-    "format": "<span font='14'></span>",
+    // "format": "<span font='14'></span>",
+    // "format": "<span font='14'>🢃</span>",
+    // "format": "<span font='16'>⏣</span>",
+    "format": "<span font='14'>≡</span>",
     "tooltip": false
   },
 
+  "custom/voxtype": {
+    "exec": "omarchy-voxtype-status",
+    "return-type": "json",
+    "format": "{icon}",
+    "format-icons": {
+      "idle": "",
+      "recording": "󰍬",
+      "transcribing": "󰔟"
+    },
+    "tooltip": true,
+    "on-click-right": "omarchy-voxtype-config",
+    "on-click": "omarchy-voxtype-model"
+  },
+  "custom/idle-indicator": {
+    "on-click": "omarchy-toggle-idle",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/idle.sh",
+    "signal": 9,
+    "return-type": "json"
+  },
+  "custom/notification-silencing-indicator": {
+    "on-click": "omarchy-toggle-notification-silencing",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/notification-silencing.sh",
+    "signal": 10,
+    "return-type": "json"
+  },
   "tray": {
       "icon-size": 16,
       "spacing": 10
@@ -265,11 +324,11 @@
   },
 
   "group/group-power": {
-    "orientation": "horizontal",
+    "orientation": "inherit",
     "drawer": {
         "transition-duration": 300,
         "children-class": "not-power",
-        "transition-left-to-right": true
+        "transition-bottom-to-top": true
     },
     "modules": [
         "clock",
@@ -280,16 +339,37 @@
         "custom/reboot",
         "custom/shutdown",
         "custom/suspend",
-        "custom/lock",
-        "user"
+        "custom/lock"
+        // "user"
       ]
   },
 
   "clock": {
-    "format": "{:%a, %d %b %H:%M}",
+    "format": "{:%H\n%M\n~~\n%d\n%m}",
     "interval": 60,
-    "tooltip": false,
-    // "on-click": "firefox https://calendar.google.com/u/0/r/month"
+    "tooltip": true,
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+                "mode"          : "month",
+                "mode-mon-col"  : 3,
+                "weeks-pos"     : "left",
+                "on-scroll"     : 1,
+                "format": {
+                          "months":     "<span color='#ffead3'><b>{}</b></span>",
+                          "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                          "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                          "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                          "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                          }
+                },
+    "actions":  {
+                "on-click-right": "mode",
+                // "on-scroll-up": "tz_up",
+                // "on-scroll-down": "tz_down",
+                "on-scroll-up": "shift_up",
+                "on-scroll-down": "shift_down"
+                },
+    "smooth-scrolling-threshold": 1
   },  
   "custom/lock": {
     "tooltip-format": "Lock",
