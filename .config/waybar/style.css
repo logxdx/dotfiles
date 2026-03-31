@@ -86,7 +86,7 @@ window#waybar {
 #workspaces {
     background: @background;
     margin: 5px;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 #workspaces button, button:hover {
